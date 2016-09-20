@@ -51,4 +51,4 @@ production:
   <<: *default
   database: colmex_production
   username: erik
-  password: 
+  password: RickS1
