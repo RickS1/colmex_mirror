@@ -2,7 +2,7 @@
 lock '3.4.1'
 
 set :application, 'prueba'
-set :repo_url, 'https://github.com/RickS1/colmex_main'
+set :repo_url, 'https://github.com/RickS1/colmex_mirror'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
