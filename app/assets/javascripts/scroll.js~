@@ -34,7 +34,7 @@ $(document).on("scroll", function(event) {
 				$(".reajustable").removeAttr("style");
 			}
 			if(ancho_act > 1165){
-			$("#idioma-big-scroll").css("display","block");
+				$("#idioma-big-scroll").css("display","block");
 				$("#idioma-small-scroll").removeAttr("style");
 			}
 			else{
@@ -63,11 +63,13 @@ $(document).on("scroll", function(event) {
   }
 	else{
   	barra_render = false;
-		if(ancho_act > 1165){
+		if(ancho_act <= 1165){
 			$("#search-lat").removeAttr("style");
+			$("#forma-busqueda").css("display","none");
 		}
 		else{
 			$("#search-lat").css("display","none");
+			$("#forma-busqueda").removeAttr("style");
 		}
 		$("#forma-busqueda").removeAttr("style");
 		$("#idioma-big-scroll").removeAttr("style");
