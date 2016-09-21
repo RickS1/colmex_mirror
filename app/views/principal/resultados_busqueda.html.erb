@@ -7,6 +7,8 @@
 				<%= "Curso: " + r.titulo %>
 			<% elsif r.is_a?(Descubre) %>
 				<%= "Descubre: " + r.titulo %>
+			<% else %>
+				<%= "Evento (" + r["tipoActividad"] + ": " + r["tituloActividad"] + ": " + r["subtituloActividad"] %>
 			<% end %>
 		<br>
 		<% end %>

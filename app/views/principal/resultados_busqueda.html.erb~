@@ -1,7 +1,6 @@
 <%= render 'principal/barra' %>
 
 <div class="container-fluid" id="resto-cuerpo">
-	<%= hidden_field_tag :condicion, params[:condicion] %>
 	<div id="cuerpo">
 		<% @resultados.each do |r| %>
 			<% if r.is_a?(Curso) %>
