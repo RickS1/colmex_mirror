@@ -40,7 +40,7 @@ class PrincipalController < ApplicationController
       end
     end
     @eventos.each do |e|
-      if (quitar_acentos(e["tituloActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["subtituloActividad"].tos).downcase.include?(condicion_limpia) or quitar_acentos(e["tipoActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["sede"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["institucionSede"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["centroSiglas"].to_s).downcase.include?(condicion_limpia)) and not @resultados.include?(e)
+      if (quitar_acentos(e["tituloActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["subtituloActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["tipoActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["sede"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["institucionSede"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["centroSiglas"].to_s).downcase.include?(condicion_limpia)) and not @resultados.include?(e)
         @resultados << e
       end
     end
