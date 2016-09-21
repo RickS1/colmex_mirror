@@ -19,6 +19,15 @@ class PrincipalController < ApplicationController
 
   def resultados_busqueda
     @resultados = []
+		begin
+      cliente = TinyTds::Client.new username: 'agendaPRED', password: '@g3NDa#', host: '172.16.40.214', port: '49767'
+      @eventos = cliente.execute("USE Agenda")
+      @eventos.do
+      @eventos = cliente.execute("SELECT * FROM dbo.vw_DatosAgenda WHERE DATEADD(day, DATEDIFF(day,'19000101',PARSE(fechaFin AS DATE USING 'es-ES')), CAST(horaFin AS DATETIME2(1))) >= CAST(GETDATE() AS DATETIME2(1)) ORDER BY PARSE(fechaInicio AS DATE USING 'es-ES') ASC, horaInicio ASC
+")
+		rescue
+			@eventos = []
+		end
     condicion_limpia = quitar_acentos(params[:condicion]).downcase
     Descubre.where("fecha_publicacion <= ? AND fecha_limite_pub > ?", Date.current(), Date.current()).each do |d|
       if (quitar_acentos(d.titulo.to_s.downcase).include?(condicion_limpia) or quitar_acentos(d.contenido.to_s.downcase).include?(condicion_limpia) or quitar_acentos(d.tags.to_s.downcase).gsub(/ *, */, " ").include?(condicion_limpia)) and not @resultados.include?(d)
@@ -28,6 +37,11 @@ class PrincipalController < ApplicationController
     Curso.all.each do |c|
       if (quitar_acentos(c.titulo.to_s.downcase).include?(condicion_limpia) or quitar_acentos(c.descripcion.to_s.downcase).include?(condicion_limpia) or quitar_acentos(c.programa.to_s.downcase).include?(condicion_limpia) or (quitar_acentos(c.programa.to_s).downcase == "curso" and quitar_acentos(c.tipo_curso.to_s).downcase.include?(condicion_limpia)) or quitar_acentos(c.tags.to_s.downcase).gsub(/ *, */, " ").include?(condicion_limpia)) and not @resultados.include?(c)
         @resultados << c
+      end
+    end
+    @eventos.each do |e|
+      if (quitar_acentos(e["tituloActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["subtituloActividad"].tos).downcase.include?(condicion_limpia) or quitar_acentos(e["tipoActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["sede"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["institucionSede"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["centroSiglas"].to_s).downcase.include?(condicion_limpia)) and not @resultados.include?(e)
+        @resultados << e
       end
     end
   end
