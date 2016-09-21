@@ -487,7 +487,7 @@ html, body{ height: 100%; }
 		.navbar-form.navbar-left { margin: 0; display: inline-block; }
 	}
 
-	@media only screen and (max-width: 900px){
+	@media only screen and (max-width: 1165px){
 		#forma-busqueda { display: none; }
 		.boton_lupa { display: none; }
 	}
