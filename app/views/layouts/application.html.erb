@@ -5,6 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+	<meta http-equiv="x-ua-compatible" content="IE=EmulateIE8" />
+	<meta name="robots" content="index, follow" />
+	<meta name="keywords" content="Investigación, ciencias sociales, economía, historia, lingüístico, literario, publicaciones, seminarios, conferencias, docencia, excelencia académica." />
+	<meta name="description" content="El Colegio de México es una institución pública, de carácter universitario, dedicada a la investigación y a la enseñanza superior." />
+
+	<%= yield :meta_tags %>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7936112/7663952/css/fonts.css" />
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4wHeWYcnK5EHh3wVczNt0xUQVhjeeUu0"></script>
