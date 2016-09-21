@@ -3,15 +3,93 @@
 <div class="container-fluid" id="resto-cuerpo">
 	<div id="cuerpo">
 		<% @resultados.each do |r| %>
-			<% if r.is_a?(Curso) %>
-				<%= "Curso: " + r.titulo %>
-			<% elsif r.is_a?(Descubre) %>
+			<% if r.is_a?(Descubre) %>
 				<%= "Descubre: " + r.titulo %>
+			<% elsif r.is_a?(Curso) %>
+
+
+    <div class="uk-grid uk-grid-medium uk-margin-large-bottom">
+    <div class="uk-width-1-5 uk-text-center">
+		<% if r.foto.url.present? %>
+    <img src=<%= r.foto.url %> class="uk-border-rounded" alt="Foto curso">
+		<% end %>
+    </div>
+    <div class="uk-width-4-5 uk-vertical-align-middle uk-text-left uk-text-break">
+    <h2 class="vino"><%= r.titulo %></h2>
+    <div class="uk-grid uk-grid-large">
+    <div class="uk-width-large-4-6 uk-text-left">
+    <p><%= r.descripcion %></p>
+    <% if r.imparte.to_s != "" %>
+      <p class="uk-text-left">Impartido por <%= r.imparte %></p>
+    <% end %>
+    <% if !r.liga.nil? %>
+    <a href=<%= r.liga %> target="_blank" class="ver-mas uk-margin-large-bottom uk-button-small">Más información</a>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <div style="display:inline-block;float:right;" class="addthis_inline_share_toolbox" data-url=<%= r.liga %> data-title="<%= r.titulo %>"></div>
+    <% end %>
+    </div>
+    <div class="uk-width-large-2-6">
+
+    <h3 class="vino uk-margin-bottom-remove">
+    <% if !r.fecha_inicio_clases.nil? %>
+      <% if r.fecha_fin_clases.nil? %>
+        <%= "Inicio de clases:" %>
+      <% else %>
+        <%= "Duración:" %>
+      <% end %>
+    <% end %>
+    </h3>
+
+    <h4 class="uk-margin-top-remove">
+      <% if !r.fecha_inicio_clases.nil? %>
+        <%= (r.fecha_inicio_clases.day.to_s + " de " + num2Month(r.fecha_inicio_clases.month - 1)) || "" %>
+        <% if r.fecha_fin_clases.nil? %>
+          <%= (" de " + r.fecha_inicio_clases.year.to_s) || "" %>
+        <% else %>
+          <% if r.fecha_fin_clases.year != r.fecha_inicio_clases.year %>
+            <%= (" de " + r.fecha_inicio_clases.year.to_s + " al " + r.fecha_fin_clases.day.to_s + " de " + num2Month(r.fecha_fin_clases.month - 1) + " de " + r.fecha_fin_clases.year.to_s ) || "" %>
+          <% else %>
+            <%= (" al " + r.fecha_fin_clases.day.to_s + " de " + num2Month(r.fecha_fin_clases.month - 1) + " de " + r.fecha_fin_clases.year.to_s ) || "" %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </h4>
+
+    <h3 class="vino uk-margin-bottom-remove">
+      <% if !r.fecha_inicio_conv.nil? and !r.fecha_fin_conv.nil? %>
+        <%= "Próxima convocatoria" %>
+      <% end %>
+    </h3>
+
+    <h4 class="uk-margin-top-remove">
+      <% if !r.fecha_inicio_conv.nil? %>
+        <%= (r.fecha_inicio_conv.day.to_s + " de " + num2Month(r.fecha_inicio_conv.month - 1)) || "" %>
+        <% if r.fecha_fin_conv.nil? %>
+          <%= (" de " + r.fecha_inicio_conv.year.to_s) || "" %>
+        <% else %>
+          <% if r.fecha_fin_conv.year != p.fecha_inicio_conv.year %>
+            <%= (" de " + r.fecha_inicio_conv.year.to_s + " al " + r.fecha_fin_conv.day.to_s + " de " + num2Month(r.fecha_fin_conv.month - 1) + " de " + r.fecha_fin_conv.year.to_s ) || "" %>
+          <% else %>
+            <%= (" al " + r.fecha_fin_conv.day.to_s + " de " + num2Month(r.fecha_fin_conv.month - 1) + " de " + r.fecha_fin_conv.year.to_s ) || "" %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </h4>
+    </div>
+    </div>
+    </div>
+    </div>
+				
+
+
 			<% else %>
 				<%= "Evento (" + r["tipoActividad"] + ": " + r["tituloActividad"] + ": " + r["subtituloActividad"] %>
 			<% end %>
 		<br>
 		<% end %>
 	</div>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57bb682464651c22"></script>
 
 <%= render 'principal/footer' %>
