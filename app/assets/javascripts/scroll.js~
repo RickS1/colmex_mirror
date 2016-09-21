@@ -63,7 +63,7 @@ $(document).on("scroll", function(event) {
   }
 	else{
   	barra_render = false;
-		if(ancho_act <= 1165){
+		if(ancho_act > 1165){
 			$("#search-lat").removeAttr("style");
 			$("#forma-busqueda").css("display","none");
 		}

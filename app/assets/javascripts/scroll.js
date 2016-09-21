@@ -65,11 +65,9 @@ $(document).on("scroll", function(event) {
   	barra_render = false;
 		if(ancho_act > 1165){
 			$("#search-lat").removeAttr("style");
-			$("#forma-busqueda").css("display","none");
 		}
 		else{
 			$("#search-lat").css("display","none");
-			$("#forma-busqueda").removeAttr("style");
 		}
 		$("#forma-busqueda").removeAttr("style");
 		$("#idioma-big-scroll").removeAttr("style");
