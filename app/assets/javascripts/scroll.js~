@@ -4,12 +4,10 @@ $(document).on("scroll", function(event) {
   var alto_logo = document.getElementById("div_logo").clientHeight;
   if (y > 200 || barra_render) {
 		$("#forma-busqueda").css("display", "none");
-		$("#div_logo").css({"height" : "0"});
-		$("#div_menu").css({"height" : "0"});
-		/*setTimeout(function(){
-			$("#div_logo").css({"display" : "none"});
-			$("#div_menu").css({"display" : "none"});
-		}, 200);*/
+		//$("#div_logo").css({"height" : "0"});
+		//$("#div_menu").css({"height" : "0"});
+		$("#div_logo").css({"display" : "none"});
+		$("#div_menu").css({"display" : "none"});
 		$(".reajustable").removeAttr("style");
 		$("#contenedor_nav").css({"min-height":"60px","background-color":"#fff","-webkit-box-shadow":"0 6px 12px rgba(0,0,0,0.175)","-moz-box-shadow":"0 6px 12px rgba(0,0,0,0.175)","box-shadow":"0 6px 12px rgba(0,0,0,0.175)"});
 		$("#barra_nav").css({"height":"100%","background-color":"#fff", "width":"90%","margin": "0 auto"});

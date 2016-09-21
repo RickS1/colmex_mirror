@@ -6,6 +6,7 @@ $(document).on("scroll", function(event) {
 		$("#forma-busqueda").css("display", "none");
 		//$("#div_logo").css({"height" : "0"});
 		//$("#div_menu").css({"height" : "0"});
+		$("#search-lat").removeAttr("style");
 		$("#div_logo").css({"display" : "none"});
 		$("#div_menu").css({"display" : "none"});
 		$(".reajustable").removeAttr("style");
@@ -62,7 +63,7 @@ $(document).on("scroll", function(event) {
   }
 	else{
   	barra_render = false;
-		if(ancho_act <= 900){
+		if(ancho_act > 1165){
 			$("#search-lat").css("display","none");
 		}
 		else{
