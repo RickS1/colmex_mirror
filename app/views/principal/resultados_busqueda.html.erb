@@ -3,9 +3,7 @@
 <div class="container-fluid" id="resto-cuerpo">
 	<div id="cuerpo" class="principal-chica uk-block-large">
 		<% @resultados.each do |r| %>
-			<% if r.is_a?(Descubre) %>
-				<%= "Descubre: " + r.titulo %>
-			<% elsif r.is_a?(Curso) %>
+			<% if r.is_a?(Curso) || r.is_a?(Descubre) %>
 
 
     <div class="uk-grid uk-grid-medium uk-margin-large-bottom">
@@ -15,6 +13,7 @@
 		<% end %>
     </div>
     <div class="uk-width-4-5 uk-vertical-align-middle uk-text-left uk-text-break">
+		<h4><%= r.is_a?(Curso) ? r.programa.upcase : r.contenido.upcase %></h4>
     <h2 class="vino"><%= r.titulo %></h2>
     <div class="uk-grid uk-grid-large">
     <div class="uk-width-large-4-6 uk-text-left">
