@@ -3,41 +3,35 @@
 <div class="container-fluid" id="resto-cuerpo">
 	<div id="cuerpo" class="principal-chica uk-block-large">
 		<% @resultados.each do |r| %>
-			<% if r.is_a?(Curso) || r.is_a?(Descubre) %>
-
 
     <div class="uk-grid uk-grid-medium uk-margin-large-bottom">
     <div class="uk-width-1-5 uk-text-center">
 		<% if (r.is_a?(Curso) and r.foto.url.present?) %>
-    <img src=<%= r.foto.url %> class="uk-border-rounded">
+    	<img src=<%= r.foto.url %> class="uk-border-rounded">
 		<% elsif (r.is_a?(Descubre) and r.imagen.url.present?) %>
-    <img src=<%= r.imagen.url %> class="uk-border-rounded">
+    	<img src=<%= r.imagen.url %> class="uk-border-rounded">
 		<% else %>
-    <img src=<%= image_url(r["centroSiglas"].downcase) %> class="uk-border-rounded">
+    	<img src=<%= image_url(r["centroSiglas"].downcase + ".png") %> class="uk-border-rounded">
 		<% end %>
     </div>
     <div class="uk-width-4-5 uk-vertical-align-middle uk-text-left uk-text-break">
-		<h4><%= r.is_a?(Curso) ? r.programa.upcase : r.contenido.upcase %></h4>
-    <h2 class="vino"><%= r.titulo %></h2>
+		<h4><%= r.is_a?(Curso) ? r.programa.upcase : (r.is_a?(Descubre) ? r.contenido.upcase : r["tipoActividad"].to_s.upcase) %></h4>
+    <h2 class="vino"><%= (r.is_a?(Curso) || r.is_a?(Descubre)) ? r.titulo : (r["tituloActividad"] + (r["subtituloActividad"].to_s != "" ? (": " + r["subtituloActividad"]) : "")) %></h2>
     <div class="uk-grid uk-grid-large">
     <div class="uk-width-large-4-6 uk-text-left">
 
     <% if !r.liga.nil? %>
-    <a href=<%= r.liga %> target="_blank" class="ver-mas uk-margin-large-bottom uk-button-small">Más información</a>
+    <a href=<%= (r.is_a?(Curso) || r.is_a?(Descubre)) ? r.liga : r["liga"].to_s %> target="_blank" class="ver-mas uk-margin-large-bottom uk-button-small">Más información</a>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <div style="display:inline-block;float:right;" class="addthis_inline_share_toolbox" data-url=<%= r.liga %> data-title="<%= r.titulo %>"></div>
+    <div style="display:inline-block;float:right;" class="addthis_inline_share_toolbox" data-url=<%= (r.is_a?(Curso) || r.is_a?(Descubre)) ? r.liga : r["liga"].to_s %> data-title="<%= (r.is_a?(Curso) || r.is_a?(Descubre)) ? r.titulo : (r["tituloActividad"] + (r["subtituloActividad"].to_s != "" ? (": " + r["subtituloActividad"]) : "")) %>"></div>
     <% end %>
     </div>
     
     </div>
     </div>
     </div>
-				
 
 
-			<% else %>
-				<%= "Evento (" + r["tipoActividad"] + ": " + r["tituloActividad"] + ": " + r["subtituloActividad"] %>
-			<% end %>
 		<br>
 		<% end %>
 	</div>

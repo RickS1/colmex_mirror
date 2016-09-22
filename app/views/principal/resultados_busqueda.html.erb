@@ -20,7 +20,6 @@
     <div class="uk-grid uk-grid-large">
     <div class="uk-width-large-4-6 uk-text-left">
 
-    <% if !r.liga.nil? %>
     <a href=<%= (r.is_a?(Curso) || r.is_a?(Descubre)) ? r.liga : r["liga"].to_s %> target="_blank" class="ver-mas uk-margin-large-bottom uk-button-small">Más información</a>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <div style="display:inline-block;float:right;" class="addthis_inline_share_toolbox" data-url=<%= (r.is_a?(Curso) || r.is_a?(Descubre)) ? r.liga : r["liga"].to_s %> data-title="<%= (r.is_a?(Curso) || r.is_a?(Descubre)) ? r.titulo : (r["tituloActividad"] + (r["subtituloActividad"].to_s != "" ? (": " + r["subtituloActividad"]) : "")) %>"></div>
