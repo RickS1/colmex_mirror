@@ -15,7 +15,7 @@
 		<% end %>
     </div>
     <div class="uk-width-4-5 uk-vertical-align-middle uk-text-left uk-text-break">
-		<h4><%= r.is_a?(Curso) ? r.programa.upcase : (r.is_a?(Descubre) ? r.contenido.upcase : r["tipoActividad"].to_s.upcase) %></h4>
+		<h4><%= r.is_a?(Curso) ? r.programa.mb_chars.upcase : (r.is_a?(Descubre) ? r.contenido.mb_chars.upcase : r["tipoActividad"].to_s.mb_chars.upcase) %></h4>
     <h2 class="vino"><%= (r.is_a?(Curso) || r.is_a?(Descubre)) ? r.titulo : (r["tituloActividad"] + (r["subtituloActividad"].to_s != "" ? (": " + r["subtituloActividad"]) : "")) %></h2>
     <div class="uk-grid uk-grid-large">
     <div class="uk-width-large-4-6 uk-text-left">

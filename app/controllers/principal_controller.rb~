@@ -23,7 +23,7 @@ class PrincipalController < ApplicationController
       cliente = TinyTds::Client.new username: 'agendaPRED', password: '@g3NDa#', host: '172.16.40.214', port: '49767'
       @eventos = cliente.execute("USE Agenda")
       @eventos.do
-      @eventos = cliente.execute("SELECT * FROM dbo.vw_DatosAgenda WHERE DATEADD(day, DATEDIFF(day,'19000101',PARSE(fechaFin AS DATE USING 'es-ES')), CAST(horaFin AS DATETIME2(1))) >= CAST(GETDATE() AS DATETIME2(1)) ORDER BY PARSE(fechaInicio AS DATE USING 'es-ES') ASC, horaInicio ASC
+      @eventos = cliente.execute("SELECT DISTINCT * FROM dbo.vw_DatosAgenda WHERE DATEADD(day, DATEDIFF(day,'19000101',PARSE(fechaFin AS DATE USING 'es-ES')), CAST(horaFin AS DATETIME2(1))) >= CAST(GETDATE() AS DATETIME2(1)) ORDER BY PARSE(fechaInicio AS DATE USING 'es-ES') ASC, horaInicio ASC
 ")
 		rescue
 			@eventos = []
@@ -40,7 +40,7 @@ class PrincipalController < ApplicationController
       end
     end
     @eventos.each do |e|
-      if (quitar_acentos(e["tituloActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["subtituloActividad"].tos).downcase.include?(condicion_limpia) or quitar_acentos(e["tipoActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["sede"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["institucionSede"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["centroSiglas"].to_s).downcase.include?(condicion_limpia)) and not @resultados.include?(e)
+      if (quitar_acentos(e["tituloActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["subtituloActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["tipoActividad"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["sede"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["institucionSede"].to_s).downcase.include?(condicion_limpia) or quitar_acentos(e["centroSiglas"].to_s).downcase.include?(condicion_limpia)) and not @resultados.include?(e)
         @resultados << e
       end
     end
