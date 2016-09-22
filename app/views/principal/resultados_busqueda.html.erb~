@@ -8,8 +8,12 @@
 
     <div class="uk-grid uk-grid-medium uk-margin-large-bottom">
     <div class="uk-width-1-5 uk-text-center">
-		<% if r.foto.url.present? %>
-    <img src=<%= r.foto.url %> class="uk-border-rounded" alt="Foto curso">
+		<% if (r.is_a?(Curso) and r.foto.url.present?) %>
+    <img src=<%= r.foto.url %> class="uk-border-rounded">
+		<% elsif (r.is_a?(Descubre) and r.imagen.url.present?) %>
+    <img src=<%= r.imagen.url %> class="uk-border-rounded">
+		<% else %>
+    <img src=<%= image_url(r["centroSiglas"].downcase) %> class="uk-border-rounded">
 		<% end %>
     </div>
     <div class="uk-width-4-5 uk-vertical-align-middle uk-text-left uk-text-break">
