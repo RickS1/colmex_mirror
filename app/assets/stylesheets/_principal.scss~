@@ -245,7 +245,7 @@ html, body{ height: 100%; }
 		.dropdown, .no-dropdown{
 			float: left;
 			text-align: center;
-			height: 100%;
+			height: 60px;
 			position: relative;
 			width: 100%;
 			padding: 0 2%;
@@ -254,7 +254,7 @@ html, body{ height: 100%; }
 			-webkit-transition: all 0.3s linear;
 			-o-transition: all 0.3s linear;
 			transition: all 0.3s linear;
-			max-width: 100px;
+			max-width: 110px;
 			
 			a{
 				display: inline-block;
@@ -748,6 +748,7 @@ ul.ul-nav { display: table;
 				
 				span{
 					width: 100%;
+					font-size: 16px;
 					font-weight: 600;
 					@include centrado;
 				}
