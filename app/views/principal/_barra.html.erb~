@@ -99,7 +99,7 @@
 </div>
 
 
-			    <form class="navbar-form navbar-left" id="forma-busqueda" method="get" action="/principal/resultados_busqueda">
+			    <form class="navbar-form navbar-left" id="forma-search" method="get" action="/principal/resultados_busqueda">
 						<div role="search">
 						<%= hidden_field_tag :locale, I18n.locale || default_locale %>
 						<div class="form-group">
