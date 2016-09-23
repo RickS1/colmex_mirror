@@ -231,7 +231,7 @@ html, body{ height: 100%; }
 #header-links { 
 	display: none;
 	height: 100%;
-	width: 830px;
+	width: 860px;
 
 	.botones{
 		overflow: visible;
@@ -254,6 +254,7 @@ html, body{ height: 100%; }
 			-webkit-transition: all 0.3s linear;
 			-o-transition: all 0.3s linear;
 			transition: all 0.3s linear;
+			max-width: 130px;
 			
 			a{
 				display: inline-block;
@@ -265,9 +266,9 @@ html, body{ height: 100%; }
 				
 				span{
 					width: 100%;
-					font-size: 14px;
+					font-size: 13px;
 					font-weight: 600;
-					line-height: 60px;
+					line-height: normal;
 				}
 			}
 
@@ -727,9 +728,9 @@ ul.ul-nav { display: table;
 			text-align: center;
 			height: 100%;
 			position: relative;
-			width: calc(20% - 2px);
-			width: -moz-calc(20% - 2px);
-			width: -webkit-calc(20% - 2px);
+			width: calc(16.66% - 2px);
+			width: -moz-calc(16.66% - 2px);
+			width: -webkit-calc(16.66% - 2px);
 			-moz-transition: all 0.3s linear;
 			-ms-transition: all 0.3s linear;
 			-webkit-transition: all 0.3s linear;
