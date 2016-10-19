@@ -91,8 +91,12 @@ $(document).on("scroll", function(event) {
 			$("#div_logo").css({"height" : ($("#img_logo").outerHeight() + "px")});
 			$("#div_menu").css({"height" : "54px"});
 		}, 50);*/
-		$("#div_logo").removeAttr("style");
+
+		$("#img_logo").removeAttr("style");
 		$("#div_menu").removeAttr("style");
+		$("#div_menu ul li a span").removeAttr("style");
+
+
 		$(".borrable").removeAttr("style");
 		$(".mail").removeAttr("style");
 		$(".intranet").removeAttr("style");
