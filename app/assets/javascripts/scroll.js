@@ -6,6 +6,7 @@ $(document).on("scroll", function(event) {
 		$("#forma-search").css("display", "none");
 
 		$("#img_logo").animate({"height" : "0", "margin": "0"}, 500);
+		$("#div_logo").animate({"min-height": "0", "margin": "0"}, 550);
 		$("#div_menu ul li a span").animate({"height" : "0"}, 500);
 		$("#div_menu").animate({"min-height": "0", "height": "0"}, 500)
 
@@ -93,6 +94,7 @@ $(document).on("scroll", function(event) {
 		}, 50);*/
 
 		$("#img_logo").removeAttr("style");
+		$("#div_logo").removeAttr("style");
 		$("#div_menu").removeAttr("style");
 		$("#div_menu ul li a span").removeAttr("style");
 
@@ -107,9 +109,10 @@ $(document).on("scroll", function(event) {
 });
 
 function ajustarCuerpo(scroll){
+  var ancho_act = Math.max(document.documentElement.clientWidth, window.innerWidth || document.body.ClientWidth || 0);
 	var alto_footer = document.getElementById('div_footer').clientHeight;
 	var alto_header = document.getElementById('header').clientHeight;
-	$('#resto-cuerpo').css({'padding-bottom': (alto_footer+1)+'px', 'padding-top': (alto_header-1.5+(scroll > 200 ? 170 : 0))+'px'});
+	$('#resto-cuerpo').css({'padding-bottom': (alto_footer+1)+'px', 'padding-top': /*(alto_header-1.5+(scroll > 200 ? 170 : 0))*/ (ancho_act > 1165 ? alto_footer : 230) + 'px'});
 }
 
 function regresarArriba(){
