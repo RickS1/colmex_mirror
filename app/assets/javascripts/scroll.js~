@@ -7,8 +7,9 @@ $(document).on("scroll", function(event) {
 
 		$("#img_logo").animate({"height" : "0", "margin": "0"}, 200);
 		$("#div_logo").animate({"min-height": "0", "margin": "0"}, 250);
+		$("#div_logo a").animate({"font-size": 0}, 200);
 		$("#div_menu ul li a span").animate({"height" : "0"}, 200);
-		$("#div_menu").animate({"min-height": "0", "height": "0"}, 200)
+		$("#div_menu").animate({"height": 0, "min-height": "0", "height": "0"}, 200)
 
 		$("#search-lat").removeAttr("style");
 		//$("#div_logo").css({"display" : "none"});
@@ -95,6 +96,7 @@ $(document).on("scroll", function(event) {
 
 		$("#img_logo").removeAttr("style");
 		$("#div_logo").removeAttr("style");
+		$("#div_logo a").removeAttr("style");
 		$("#div_menu").removeAttr("style");
 		$("#div_menu ul li a span").removeAttr("style");
 

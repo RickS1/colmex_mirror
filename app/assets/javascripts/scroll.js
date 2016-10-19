@@ -6,7 +6,7 @@ $(document).on("scroll", function(event) {
 		$("#forma-search").css("display", "none");
 
 		$("#img_logo").animate({"height" : "0", "margin": "0"}, 200);
-		$("#div_logo").animate({"min-height": "0", "margin": "0"}, 250);
+		$("#div_logo").animate({"height": "0", "min-height": "0", "margin": "0"}, 250);
 		$("#div_logo a").animate({"font-size": 0}, 200);
 		$("#div_menu ul li a span").animate({"height" : "0"}, 200);
 		$("#div_menu").animate({"height": 0, "min-height": "0", "height": "0"}, 200)
