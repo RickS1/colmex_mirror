@@ -4,8 +4,11 @@ $(document).on("scroll", function(event) {
   var alto_logo = document.getElementById("div_logo").clientHeight;
   if (y > 200 || barra_render) {
 		$("#forma-search").css("display", "none");
-		//$("#div_logo").css({"height" : "0"});
-		//$("#div_menu").css({"height" : "0"});
+
+		$("#img_logo").animate({"height" : "0", "margin": "0"}, 500);
+		$("#div_menu ul li a span").animate({"height" : "0"}, 500);
+		$("#div_menu").animate({"min-height": "0", "height": "0"}, 500)
+
 		$("#search-lat").removeAttr("style");
 		$("#div_logo").css({"display" : "none"});
 		$("#div_menu").css({"display" : "none"});
