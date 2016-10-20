@@ -1638,7 +1638,7 @@ ul.ul-nav { display: table;
 
 				.boton-donar{
 					color: #fff;
-					line-height: 46px;
+					line-height: 36px;
 					display: block;
 
 					span{
@@ -1735,7 +1735,7 @@ ul.ul-nav { display: table;
 	#fundacion-colmex { height: 340px; padding-bottom: 30px; }
 }
 
-@media only screen and (min-width: 585px) and (max-width: 947px){
+@media only screen and (min-width: 585px) and (max-width: 930px){
 	#fundacion-colmex{ padding: 30px 30px 0 30px; }
 }
 
@@ -1767,27 +1767,6 @@ ul.ul-nav { display: table;
 		
 		>span { position: relative; top: 15px; }
 	}
-	/*blockquote::before {
-			/*display: block;
-			content: '\201C';
-			font-family: Georgia, New Times Roman, serif;
-			font-size: 120px;
-			line-height: 20px;
-			position: relative;
-			text-align: left;
-			top: 40px;
-			right: 75px;
-	}
-	blockquote::after {
-			/*display: block;
-			content: '\201D';
-			font-family: Georgia, New Times Roman, serif;
-			font-size: 120px;
-			position: relative;
-			text-align:right;
-			bottom: 50px;
-			left: 55px;
-	}*/
 }
 
 //Estilos que afectan a la sección de transparencia
