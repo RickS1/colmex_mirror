@@ -1615,7 +1615,15 @@ ul.ul-nav { display: table;
 			p { height: 65%; }
 		}
 
-		@media only screen and (max-width: 360px){
+		@media only screen and (max-width: 250px){
+			p { padding-top: 27px; font-size: 7px; }
+		}
+
+		@media only screen and (min-width: 250px) and (max-width: 330px){
+			p { padding-top: 27px; font-size: 8px; }
+		}
+
+		@media only screen and (min-width: 330px) and (max-width: 360px){
 			p { padding-top: 27px; font-size: 10px; }
 		}
 
