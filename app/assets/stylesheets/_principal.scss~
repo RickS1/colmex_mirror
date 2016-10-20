@@ -1653,6 +1653,22 @@ ul.ul-nav { display: table;
 				}
 			}
 
+			.boton-row{
+				display: table-row;
+				background-color: #470020;
+				font-size: 14px;
+				border-color: #9E6680;
+				border-width: 2px;
+				border-style: solid;
+				height: 40px;
+				width: 110px;
+				text-align: center;
+			}
+
+			#actualizar{
+
+			}
+
 			#conocer{
 				background-color: #9E6680;
 				border: solid 1px #5E002B;
