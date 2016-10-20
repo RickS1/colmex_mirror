@@ -1623,7 +1623,11 @@ ul.ul-nav { display: table;
 			p { padding-top: 27px; font-size: 11px; }
 		}
 		
-		@media only screen and (min-width: 390px) and (max-width: 470px){
+		@media only screen and (min-width: 390px) and (max-width: 425px){
+			p { padding-top: 27px; font-size: 12px; }
+		}
+
+		@media only screen and (min-width: 425px) and (max-width: 470px){
 			p { padding-top: 27px; font-size: 13px; }
 		}
 
