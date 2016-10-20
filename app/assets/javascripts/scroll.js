@@ -5,11 +5,11 @@ $(document).on("scroll", function(event) {
   if (y > 200 || barra_render) {
 		$("#forma-search").css("display", "none");
 
-		$("#img_logo").animate({"height" : "0", "margin": "0"}, 100);
-		$("#div_logo").animate({"height": "0", "min-height": "0", "margin": "0"}, 100);
-		$("#div_logo a").animate({"font-size": 0}, 100);
-		$("#div_menu ul li a span").animate({"height" : "0"}, 100);
-		$("#div_menu").animate({"height": 0, "min-height": "0", "height": "0"}, 100)
+		$("#img_logo").stop().animate({"height" : "0", "margin": "0"}, 100);
+		$("#div_logo").stop().animate({"height": "0", "min-height": "0", "margin": "0"}, 100);
+		$("#div_logo a").stop().animate({"font-size": 0}, 100);
+		$("#div_menu ul li a span").stop().animate({"height" : "0"}, 100);
+		$("#div_menu").stop().animate({"height": 0, "min-height": "0", "height": "0"}, 100)
 
 		$("#search-lat").removeAttr("style");
 		//$("#div_logo").css({"display" : "none"});
@@ -94,11 +94,11 @@ $(document).on("scroll", function(event) {
 			$("#div_menu").css({"height" : "54px"});
 		}, 50);*/
 
-		$("#img_logo").removeAttr("style");
-		$("#div_logo").removeAttr("style");
-		$("#div_logo a").removeAttr("style");
-		$("#div_menu").removeAttr("style");
-		$("#div_menu ul li a span").removeAttr("style");
+		$("#img_logo").stop().removeAttr("style");
+		$("#div_logo").stop().removeAttr("style");
+		$("#div_logo a").stop().removeAttr("style");
+		$("#div_menu").stop().removeAttr("style");
+		$("#div_menu ul li a span").stop().removeAttr("style");
 
 
 		$(".borrable").removeAttr("style");
