@@ -1611,7 +1611,11 @@ ul.ul-nav { display: table;
 			text-align: left;
 		}
 
-		@media only screen and (min-width: 0px) and (max-width: 360px){
+		@media only screen and (max-width: 585px){
+			p { height: 65%; }
+		}
+
+		@media only screen and (max-width: 360px){
 			p { padding-top: 27px; font-size: 10px; }
 		}
 
@@ -1665,7 +1669,7 @@ ul.ul-nav { display: table;
 						line-height: normal;
 					}
 
-					@media only screen and (min-width: 0px) and (max-width: 1070px){
+					@media only screen and (max-width: 1070px){
 						span { font-size: 11px; } 
 					}
 				}
