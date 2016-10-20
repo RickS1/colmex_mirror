@@ -1621,7 +1621,7 @@ ul.ul-nav { display: table;
 			display: table;
 			width: 100%;
 			border-collapse: separate;
-			border-spacing: 10px 0;
+			border-spacing: 10px 1px;
 			padding: 0 5px;
 
 			.boton{
@@ -1653,20 +1653,14 @@ ul.ul-nav { display: table;
 				}
 			}
 
-			.boton-row{
-				display: table-row;
-				background-color: #470020;
-				font-size: 14px;
-				border-color: #9E6680;
-				border-width: 2px;
-				border-style: solid;
-				height: 40px;
-				width: 110px;
-				text-align: center;
-			}
-
 			#actualizar{
-
+				background-color: #470020;
+				border: solid 1px #9E6680;
+				-webkit-transition: all 0.4s linear;
+				-moz-transition: all 0.4s linear;
+				-ms-transition: all 0.4s linear;			
+				-o-transition: all 0.4s linear;
+				transition: all 0.4s linear;
 			}
 
 			#conocer{

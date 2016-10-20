@@ -1617,11 +1617,11 @@ ul.ul-nav { display: table;
 			p { padding-top: 27px; font-size: 16px; }
 		}
 
-		#contenedor-botones{
+		.contenedor-botones{
 			display: table;
 			width: 100%;
 			border-collapse: separate;
-			border-spacing: 10px 0;
+			border-spacing: 10px 1px;
 			padding: 0 5px;
 
 			.boton{
@@ -1666,7 +1666,13 @@ ul.ul-nav { display: table;
 			}
 
 			#actualizar{
-
+				background-color: #470020;
+				border: solid 1px #9E6680;
+				-webkit-transition: all 0.4s linear;
+				-moz-transition: all 0.4s linear;
+				-ms-transition: all 0.4s linear;			
+				-o-transition: all 0.4s linear;
+				transition: all 0.4s linear;
 			}
 
 			#conocer{
