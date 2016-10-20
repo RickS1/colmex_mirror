@@ -1719,6 +1719,10 @@ ul.ul-nav { display: table;
 				color: #CCCCCC;
 			}
 		}
+
+		@media only screen and (max-height: 1260px){
+			.contenedor-botones { border-spacing: 10px 3px; }
+		}
 	}
 
 	#div-img-fundacion{ 
