@@ -13,7 +13,7 @@ $(document).on("scroll", function(event) {
 
 		$("#img_logo").stop().css({"height" : "0", "margin": "0"});
 		$("#div_logo").stop().css({"height": "0", "min-height": "0", "margin": "0"});
-		$("#div_logo a").stop().css({"font-size": 0});
+		$("#div_logo a").stop().css({"font-size": "0px"});
 		$("#div_menu ul li a span").stop().css({"font-size" : "0"});
 		$("#div_menu").stop().css({"height": 0, "min-height": "0"});
 

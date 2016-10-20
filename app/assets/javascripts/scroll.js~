@@ -94,17 +94,11 @@ $(document).on("scroll", function(event) {
 		$(".reajustable").removeAttr("style");
 		$("#logo-main").removeAttr("style");
 
-		/*$("#img_logo").stop().removeAttr("style");
+		$("#img_logo").stop().removeAttr("style");
 		$("#div_logo").stop().removeAttr("style");
 		$("#div_logo a").stop().removeAttr("style");
 		$("#div_menu").stop().removeAttr("style");
-		$("#div_menu ul li a span").stop().removeAttr("style");*/
-
-		$("#img_logo").stop().animate({}, 200, function(){});
-		$("#div_logo").stop().animate({}, 200, function(){});
-		$("#div_logo a").stop().animate({}, 200, function(){});
-		$("#div_menu ul li a span").stop().animate({}, 200, function(){});
-		$("#div_menu").stop().animate({}, 200, function(){});
+		$("#div_menu ul li a span").stop().removeAttr("style");
 
 		$(".borrable").removeAttr("style");
 		$(".mail").removeAttr("style");
