@@ -94,11 +94,11 @@ $(document).on("scroll", function(event) {
 			$("#div_menu").css({"height" : "54px"});
 		}, 50);*/
 
-		$("#img_logo").removeAttr("style");
-		$("#div_logo").removeAttr("style");
-		$("#div_logo a").removeAttr("style");
-		$("#div_menu").removeAttr("style");
-		$("#div_menu ul li a span").removeAttr("style");
+		$("#img_logo").stop().removeAttr("style");
+		$("#div_logo").stop().removeAttr("style");
+		$("#div_logo a").stop().removeAttr("style");
+		$("#div_menu").stop().removeAttr("style");
+		$("#div_menu ul li a span").stop().removeAttr("style");
 
 
 		$(".borrable").removeAttr("style");

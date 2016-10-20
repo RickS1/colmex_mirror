@@ -8,7 +8,7 @@ $(document).on("scroll", function(event) {
 		$("#img_logo").stop().animate({"height" : "0", "margin": "0"}, 100);
 		$("#div_logo").stop().animate({"height": "0", "min-height": "0", "margin": "0"}, 100);
 		$("#div_logo a").stop().animate({"font-size": 0}, 100);
-		$("#div_menu ul li a span").stop().animate({"height" : "0"}, 100);
+		$("#div_menu ul li a span").stop().animate({"font-size" : "0"}, 100);
 		$("#div_menu").stop().animate({"height": 0, "min-height": "0", "height": "0"}, 100)
 
 		$("#search-lat").removeAttr("style");
