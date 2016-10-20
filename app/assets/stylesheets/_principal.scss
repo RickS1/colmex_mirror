@@ -1609,11 +1609,11 @@ ul.ul-nav { display: table;
 			p { padding-top: 27px; font-size: 15px; }
 		}
 
-		@media only screen and (min-width: 670px) and (max-width: 930px){
+		@media only screen and (min-width: 670px) and (max-width: 931px){
 			p { padding-top: 27px; font-size: 15px; }
 		}
 
-		@media only screen and (min-width: 930px) and (max-width: 1260px){
+		@media only screen and (min-width: 931px) and (max-width: 1260px){
 			p { padding-top: 27px; font-size: 16px; }
 		}
 
@@ -1651,6 +1651,22 @@ ul.ul-nav { display: table;
 						span { font-size: 11px; } 
 					}
 				}
+			}
+
+			.boton-row{
+				display: table-row;
+				background-color: #470020;
+				font-size: 14px;
+				border-color: #9E6680;
+				border-width: 2px;
+				border-style: solid;
+				height: 40px;
+				width: 110px;
+				text-align: center;
+			}
+
+			#actualizar{
+
 			}
 
 			#conocer{
