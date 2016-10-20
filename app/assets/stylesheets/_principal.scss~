@@ -1638,7 +1638,7 @@ ul.ul-nav { display: table;
 
 				.boton-donar{
 					color: #fff;
-					line-height: 46px;
+					line-height: 36px;
 					display: block;
 
 					span{
