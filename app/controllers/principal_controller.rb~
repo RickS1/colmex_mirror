@@ -1,15 +1,15 @@
 class PrincipalController < ApplicationController
   def principal
-    begin
+    #begin
       cliente = TinyTds::Client.new username: 'agendaPRED', password: '@g3NDa#', host: '172.16.40.214', port: '49767'
       @resultado = cliente.execute("USE Agenda")
       @resultado.do
       @resultado = cliente.execute("SELECT * FROM dbo.vw_DatosAgenda WHERE DATEADD(day, DATEDIFF(day,'19000101',PARSE(fechaFin AS DATE USING 'es-ES')), CAST(horaFin AS DATETIME2(1))) >= CAST(GETDATE() AS DATETIME2(1))  ORDER BY PARSE(fechaInicio AS DATE USING 'es-ES') ASC, horaInicio ASC
 ")
       gon.ev_big, gon.ev_small, gon.ev_tiny = construye_slider_eventos(@resultado)
-    rescue
-      gon.ev_big, gon.ev_small, gon.ev_tiny = "", "" ,""
-    end
+    #rescue
+    #  gon.ev_big, gon.ev_small, gon.ev_tiny = "", "" ,""
+    #end
     @sliders = Slider.where("liga LIKE ? ", "%youtu%").union(Slider.where.not("liga LIKE ? ", "%youtu%").order("RAND()"))
     @descubre = Descubre.where("fecha_publicacion <= ? AND fecha_limite_pub > ?", Date.current(), Date.current()).order("RAND()")
     @frase = Frase.order("RAND()").first
