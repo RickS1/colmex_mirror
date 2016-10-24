@@ -1,7 +1,7 @@
 class PrincipalController < ApplicationController
   def principal
     #begin
-      cliente = TinyTds::Client.new username: 'agendaPRED', password: '@g3NDa#', host: '172.16.33.5', port: '1433'
+      cliente = TinyTds::Client.new username: 'agendaPRED', password: '@g3NDa#', host: '172.16.40.220', port: '1433'
       @resultado = cliente.execute("USE Agenda")
       @resultado.do
       @resultado = cliente.execute("SELECT * FROM dbo.vw_DatosAgenda WHERE DATEADD(day, DATEDIFF(day,'19000101',PARSE(fechaFin AS DATE USING 'es-ES')), CAST(horaFin AS DATETIME2(1))) >= CAST(GETDATE() AS DATETIME2(1))  ORDER BY PARSE(fechaInicio AS DATE USING 'es-ES') ASC, horaInicio ASC
