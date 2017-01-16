@@ -74,7 +74,7 @@
       <% end %>
     </h4>
     <h3 class="vino uk-margin-top-remove">
-    <% if !e.fecha_fin_clases.nil? && e.fecha_fin_clases > Date.current() && e.tipo_curso_linea == "MOOC" && e.tipo_curso == "En línea" %>
+    <% if !e.fecha_fin_clases.nil? && e.fecha_inicio_clases > Date.current() && e.tipo_curso_linea == "MOOC" && e.tipo_curso == "En línea" %>
       <%= "Convocatoria abierta" %>
     <% else %>
       <%= "Convocatoria cerrada" %>
