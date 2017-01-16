@@ -13,7 +13,8 @@
       <p class="uk-text-left">Impartido por <%= conv.imparte %></p>
     <% end %>
     <% if !conv.liga.nil? %>
-    <a href=<%= conv.liga %> target="_blank" class="ver-mas uk-margin-large-bottom uk-button-small">Más información</a>
+    <!--<a href=<%= conv.liga %> target="_blank" class="ver-mas uk-margin-large-bottom uk-button-small">Más información</a> -->
+		<%= conv.tags.html_safe %>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <div style="display:inline-block;float:right;" class="addthis_inline_share_toolbox" data-url=<%= conv.liga %> data-title="<%= conv.titulo %>"></div>
     <% end %>

@@ -64,7 +64,7 @@
           <% end %>
         <% end %>
 			<% else %>
-				<%= "Abierta hasta " + (conv.fecha_fin_conv.day.to_s + " de " + num2Month(conv.fecha_fin_conv.month - 1) + " de " + conv.fecha_fin_conv.year.to_s)
+				<%= "Abierta hasta " + (conv.fecha_fin_conv.day.to_s + " de " + num2Month(conv.fecha_fin_conv.month - 1) + " de " + conv.fecha_fin_conv.year.to_s) %>
       <% end %>
     </h4>
     </div>
