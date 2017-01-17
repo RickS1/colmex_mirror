@@ -49,6 +49,8 @@
 });
             }
         </script>
+<script type="text/javascript" src="/js/ajustes_tamanio.js"></script>
+
 
 </head>
 
@@ -62,7 +64,4 @@
   <%= yield %>
 
 </body>
-
-  <script type="text/javascript" src="/js/ajustes_tamanio.js"></script>
-
 </html>
