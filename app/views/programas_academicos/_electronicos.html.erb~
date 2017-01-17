@@ -22,9 +22,10 @@
     <% if e.imparte.to_s != "" %>
       <p class="uk-text-left">Impartido por <%= e.imparte %></p>
     <% end %>
-    <% if !e.liga.nil? %>
+    <!-- <% if !e.liga.nil? %>
       <a href=<%= e.liga %> target="_blank" class="ver-mas uk-margin-large-bottom uk-button-small">Más información</a>
-    <% end %>
+    <% end %> -->
+		<%= e.tags.html_safe %>
     <% if t.tipo_curso_linea == "Breve" && !e.liga.nil? %>
       <div class="addthis_inline_share_toolbox" data-url=<%= e.liga %> data-title="<%= e.titulo %>" style="display:inline-block; float: right;"></div>
     <% end %>

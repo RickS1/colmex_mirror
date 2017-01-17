@@ -112,7 +112,7 @@ function partirDescubres(){
 	var alto_d;
 	for( var i = 0; i < descubres.length; i++){
 		if(descubres[i]["visible"]){
-			alto_d = document.getElementById("frame-"+i).clientHeight - 8;
+			alto_d = document.getElementById("frame-"+i).clientHeight + 8;
 			break;
 		}
 	}
@@ -147,7 +147,7 @@ function desbordarDescubres(){
 	var alto_d; 
 	for( var i = 0; i < descubres.length; i++){
 		if(descubres[i]["visible"]){
-			alto_d = document.getElementById("frame-"+i).clientHeight - 8;
+			alto_d = document.getElementById("frame-"+i).clientHeight + 8;
 			break;
 		}
 	}
