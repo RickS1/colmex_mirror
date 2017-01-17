@@ -70,7 +70,7 @@ $(window).on("resize",function(){
 	reescalarDescubre();
 });
 
-
+	reescalarFrames();
 	$(document).trigger("scroll");
 });
 
