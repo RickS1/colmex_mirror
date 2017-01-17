@@ -68,9 +68,9 @@ $(window).on("resize",function(){
 	}
 	$(document).trigger("scroll");
 	reescalarDescubre();
+	reescalarFrames();
 });
 
-	reescalarFrames();
 	$(document).trigger("scroll");
 });
 

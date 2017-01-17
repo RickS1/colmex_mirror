@@ -78,7 +78,7 @@ function reescalarFrames(){
 	var frames = document.getElementsByTagName("iframe");
 	for(var i = 0; i < frames.length - 1; i++){
 		if(frames[i].clientWidth < 560){
-			frames[i].height = frames[i]*315/560;
+			frames[i].height = frames[i].clientWidth*315/560;
 		}
 	}
 }
