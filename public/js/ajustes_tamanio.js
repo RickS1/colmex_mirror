@@ -67,11 +67,12 @@ $(window).on("resize",function(){
 		escalarLightbox();
 	}
 	$(document).trigger("scroll");
-	reescalarDescubre();
 	reescalarFrames();
+	reescalarDescubre();
 });
 
 	$(document).trigger("scroll");
+	reescalarFrames();
 });
 
 function reescalarFrames(){
@@ -80,6 +81,8 @@ function reescalarFrames(){
 		if(frames[i].clientWidth < 560){
 			frames[i].height = frames[i].clientWidth*315/560;
 		}
+		else
+			frames[i].height = "315";
 	}
 }
 
