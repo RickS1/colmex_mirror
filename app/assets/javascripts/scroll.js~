@@ -104,6 +104,15 @@ $(document).on("scroll", function(event) {
   	ajustarCuerpo(y);
 });
 
+function reescalarFrames(){
+	var frames = document.getElementsByTagName("iframe");
+	for(var i = 0; i < frames.length - 1; i++){
+		if(frames[i].clientWidth < 560){
+			frames[i].height = frames[i].clientWidth*315/560;
+		}
+	}
+}
+
 function ajustarCuerpo(scroll){
   var ancho_act = Math.max(document.documentElement.clientWidth, window.innerWidth || document.body.ClientWidth || 0);
 	var alto_footer = (document.getElementById('div_footer').clientHeight || 265);
